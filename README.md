@@ -464,6 +464,7 @@ Template entityTemplate = configuration.getTemplate("entity.ftl");
 Map<String, Object> data = new HashMap<>(4);
 FileWriter fileWriter = new FileWriter(file);
 entityTemplate.process(data, fileWriter);
+```
 
 ## 工具类
 ```java
