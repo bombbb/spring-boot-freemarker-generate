@@ -1,4 +1,5 @@
-# spring boot freemarker 制作专属代码生成器
+![](https://img.hacpai.com/bing/20181008.jpg?imageView2/1/w/960/h/540/interlace/1/q/100)
+
 
 最近在做学校的项目，自己从零开始一步一步搭建与设计，遇到了一堆的问题，不过也感觉到了自己在不断成长，只有在实践中才会发现会有那么多的问题存在。记录一下遇到的一个典型的问题，**代码生成**。因为项目使用的是 spring data jpa 而不是 mybatis，所以并没有 mybatis-plus 的代码生成器，就寻思自己写一个了。
 
@@ -219,6 +220,8 @@ public void testTables() {
 }
 ```
 
+#### 获取列信息
+
 然后我们需要一个实体类来和列进行对应
 
 ```java
@@ -311,7 +314,7 @@ public void testColumns() {
 
 这样就没有问题了。
 
-### 书写模板
+## 书写模板
 
 在 `resource` 下创建 `templates` 文件夹，同时创建一个 `entity.ftl` 的 `freemarker` 文件：
 ```
@@ -343,7 +346,7 @@ public class ${class_name} implements Serializable {
 }
 ```
 
-### 生成模板
+## 生成模板
 
 生成模板有很多种方式，本质都是对 spring 的应用进行监听，当他启动的时候调用某个时间或者进行监听。这里我使用实现 `ApplicationRunner` 的方式，他会需要实现一个 `run` 方法，通过实现这个方法，会在应用启动完成后调用此方法。
 
