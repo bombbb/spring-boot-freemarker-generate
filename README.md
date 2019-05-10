@@ -5,6 +5,8 @@
 > 实例地址：[spring-boot-freemarker-generate](https://github.com/lizhongyue248/spring-boot-freemarker-generate)
 >
 > 项目模块：[lesson-cloud-generate](https://github.com/gzmuSoft/lesson-cloud/tree/master/lesson-cloud-generate)
+>
+> 博客地址：[EchoCow](https://echocow.cn)
 
 ## 这篇文章能够带给你什么
 1. spring boot 配置文件读取
