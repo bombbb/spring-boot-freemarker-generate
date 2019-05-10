@@ -2,11 +2,16 @@
 
 最近在做学校的项目，自己从零开始一步一步搭建与设计，遇到了一堆的问题，不过也感觉到了自己在不断成长，只有在实践中才会发现会有那么多的问题存在。记录一下遇到的一个典型的问题，**代码生成**。因为项目使用的是 spring data jpa 而不是 mybatis，所以并没有 mybatis-plus 的代码生成器，就寻思自己写一个了。
 
+> 实例地址：[spring-boot-freemarker-generate](https://github.com/lizhongyue248/spring-boot-freemarker-generate)
+>
+> 项目模块：[lesson-cloud-generate](https://github.com/gzmuSoft/lesson-cloud/tree/master/lesson-cloud-generate)
+
 ## 这篇文章能够带给你什么
 1. spring boot 配置文件读取
 2. spring boot 与 freemarker 的最佳实践
 3. 如何从数据库中读取到有用的元数据和表信息
 4. spring boot 事件监听机制
+5. spring boot starter freemarker 的分析与探究
 
 期间遇到了很多问题，网上搜寻了半天，都没有使用 spring boot + freemarker 来只做模板引擎的，我的思路其实来源于他的源码，具体后面会说。一开始准备单独写的，但是发现如果需要读取配置文件又要去找一堆库，还有一些工具类，为什么不直接用 spring boot 呢？当然还有以下的一些原因
 
@@ -538,5 +543,7 @@ public class GenUtil {
 4. 指定生成时排除某些列
 5. 指定生成时按照条件添加某些注解
 6. ......
+
+同样，如果你对于 `spring` 的事件熟悉的话，可以自定义生成顺序，比如 `@Order` 注解，比如使用 `SpringApplicationBuilder` 自己启动并添加事件监听都是可行的。
 
 不过如果有多个代码生成的话，就会有设计方面的问题，如何设计才能够更优雅而没有一堆重复的代码。我在当初就没考虑到这个问题，写出来的代码可维护性就很差，自己重构半天出现更多的问题=-=然后暂时放弃重构，后面再说吧～～
